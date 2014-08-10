@@ -1,0 +1,8 @@
+FROM abevoelker/ruby
+
+ENV NOKOGIRI_USE_SYSTEM_LIBRARIES true
+
+RUN apt-get update && apt-get install -y mysql-client libmysqlclient-dev redis-server tmux sphinxsearch
+
+EXPOSE 8080
+WORKDIR /vagrant
