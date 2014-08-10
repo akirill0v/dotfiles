@@ -1,0 +1,37 @@
+# Directories
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias -="cd -"
+
+alias la="ls -Gla"
+
+# List only directories
+alias lsd='ls -l | grep "^d"'
+
+alias ll='ls -ahlF'
+alias l='ls -CF'
+
+# Git
+alias gci='git ci'
+alias gco='git co'
+alias gg='git grep -n'
+
+# Quick check running state of a process
+alias psef="ps -ef | grep "
+alias top="top -o cpu"
+alias ps="command ps -SAcr -o 'uid,pid,ppid,time,rss,command'"
+# GIt flow
+alias gff="git flow feature"
+alias gfco="git flow feature checkout"
+
+# Vagrant
+alias vup="vagrant up --provider=parallels"
+alias vss="vagrant ssh"
+alias vh="vagrant halt"
+
+# Docker
+alias do="docker"
+
+# Ansible
+alias ap=ansible-playbook

@@ -1,0 +1,31 @@
+commands:
+  bundle: &base_cmd
+    directory: "/vagrant"
+    image: "devcenter"
+    from: "data"
+    link:
+      - "postgresql:pg"
+    volumes:
+      - "/home/kirillov/projects/undev/dev-center:/vagrant"
+  rake: &bundled
+    <<: *base_cmd
+    prepend: "bundle exec"
+  rspec:
+    <<: *bundled
+  sidekiq:
+    <<: *bundled
+  pry:
+    <<: *bundled
+  rails: &rails
+    <<: *bundled
+    ports:
+      - "8080:8080"
+  unicorn:
+    <<: *rails
+  env:
+    <<: *base_cmd
+  tmux:
+    <<: *base_cmd
+  bashdo:
+    <<: *rails
+    cmd: /bin/bash

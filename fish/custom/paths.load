@@ -1,0 +1,5 @@
+set -x GOPATH $HOME/projects/go
+set -x PATH $PATH $GOPATH/bin
+set -x PATH $PATH /usr/local/bin
+set -x PATH $PATH /home/kirillov/.gem/ruby/2.1.0/bin
+set -x EDITOR vim
