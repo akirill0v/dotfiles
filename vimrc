@@ -58,11 +58,15 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-cucumber'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'henrik/vim-yaml-flattener'
+
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " End Plugins---------------------------------
-" Required:
-filetype plugin indent on
 
 " Plugin Configs------------------------------
 filetype plugin indent on
@@ -100,7 +104,7 @@ colorscheme github
 "let g:solarized_termcolors=256
 " End Plugin Configs--------------------------
 
-"filetype off
+filetype off
 
 let mapleader=","
 
