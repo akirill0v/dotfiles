@@ -4,4 +4,4 @@ set -x PATH $PATH /usr/local/bin
 set -x PATH $PATH /home/kirillov/.gem/ruby/2.1.0/bin
 set -x PATH $PATH $HOME/.sdk/tools
 set -x PATH $PATH $HOME/.sdk/platform-tools
-set -x EDITOR vim
+set -x EDITOR emacsclient -t

@@ -35,3 +35,6 @@ alias do="docker"
 
 # Ansible
 alias ap=ansible-playbook
+
+#emacs
+alias em="emacsclient -t"

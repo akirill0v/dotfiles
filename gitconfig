@@ -24,3 +24,5 @@
 	mt = mergetool                    # fire up the merge tool
 [credential]
 	helper = osxkeychain
+[core]
+  editor = emacsclient -t -a=\\\"\\\"
