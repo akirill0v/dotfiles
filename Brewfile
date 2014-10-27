@@ -18,3 +18,4 @@ install tmux
 install vim
 install wxmac
 install boot2docker
+install fig
