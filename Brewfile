@@ -1,32 +1,20 @@
-android-sdk
-ansible
-bazaar
-brew-cask
-curl
-direnv
-docker
-docker-exec
-erlang
-fish
-gettext
-git
-git-flow-avh
-gnu-getopt
-go
-httpie
-hugo
-jpeg
-libevent
-libpng
-libtiff
-libyaml
-lua
-mercurial
-openssl
-packer
-rcm
-syncthing
-tmux
-unixodbc
-vim
-wxmac
+install android-sdk
+install ansible
+install bazaar
+install caskroom/cask/brew-cask
+install curl
+install fish
+install gettext
+install git
+install git-flow-avh
+install gnu-getopt
+install go
+install httpie
+install lua
+install mercurial
+install rcm
+install syncthing
+install tmux
+install vim
+install wxmac
+install boot2docker

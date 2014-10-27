@@ -25,4 +25,4 @@
 [credential]
 	helper = osxkeychain
 [core]
-  editor = emacsclient -t -a=\\\"\\\"
+  ;editor = emacsclient -t -a=\\\"\\\"
