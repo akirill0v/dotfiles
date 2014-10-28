@@ -38,3 +38,7 @@ alias ap=ansible-playbook
 
 #emacs
 alias em="emacsclient -t"
+
+# Fig
+alias fr="fig run --rm"
+alias frw="fig run --rm web"

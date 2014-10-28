@@ -14,3 +14,4 @@ cask install skype 2> /dev/null
 cask install tunnelblick 2> /dev/null
 cask install spotify 2> /dev/null
 cask install spotifree 2> /dev/null
+cask install vagrant 2> /dev/null
