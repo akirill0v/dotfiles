@@ -6,6 +6,7 @@ set -x PATH $PATH $HOME/.sdk/tools
 set -x PATH $PATH $HOME/.sdk/platform-tools
 set -x EDITOR vim
 
-set -x DOCKER_HOST tcp://(boot2docker ip 2>/dev/null):2376
-set -x DOCKER_CERT_PATH $HOME/.boot2docker/certs/boot2docker-vm
-set -x DOCKER_TLS_VERIFY 1
+# set -x DOCKER_HOST tcp://(boot2docker ip 2>/dev/null):2376
+set -x DOCKER_HOST tcp://localhost:2375
+# set -x DOCKER_CERT_PATH $HOME/.boot2docker/certs/boot2docker-vm
+# set -x DOCKER_TLS_VERIFY 1

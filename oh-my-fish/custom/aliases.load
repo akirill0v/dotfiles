@@ -26,9 +26,11 @@ alias gff="git flow feature"
 alias gfco="git flow feature checkout"
 
 # Vagrant
+alias vu="vagrant up"
 alias vup="vagrant up --provider=parallels"
 alias vss="vagrant ssh"
 alias vh="vagrant halt"
+alias vntp="vagrant ssh -c 'sudo ntpclient -s -h pool.ntp.org'"
 
 # Docker
 alias do="docker"
@@ -40,5 +42,7 @@ alias ap=ansible-playbook
 alias em="emacsclient -t"
 
 # Fig
+alias fu="fig up"
 alias fr="fig run --rm"
 alias frw="fig run --rm web"
+alias frwr="fig run --rm web bundle exec"

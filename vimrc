@@ -33,6 +33,7 @@ Plugin 'elzr/vim-json'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-git'
+Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'vim-ruby/vim-ruby'
