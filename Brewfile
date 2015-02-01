@@ -13,9 +13,7 @@ install httpie
 install lua
 install mercurial
 install rcm
-install syncthing
 install tmux
-install vim
-install wxmac
+install macvim
 install boot2docker
 install fig

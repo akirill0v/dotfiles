@@ -28,6 +28,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-commentary'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'majutsushi/tagbar'
 
 Plugin 'elzr/vim-json'
 Plugin 'plasticboy/vim-markdown'
@@ -41,6 +42,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-dispatch'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'ngmy/vim-rubocop'
 
 Plugin 'chase/vim-ansible-yaml'
 
@@ -65,6 +67,10 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
+
+" Rust
+Plugin 'wting/rust.vim'
+Plugin 'cespare/vim-toml'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " End Plugins---------------------------------
@@ -174,3 +180,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Map Goyo toggle to <Leader> + spacebar
 nnoremap <Leader><Space> :Goyo<CR>
+" Tagbar
+noremap <Leader><leader>t :TagbarToggle<CR>

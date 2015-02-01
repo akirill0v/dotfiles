@@ -1,0 +1,30 @@
+# Old version ???!!!
+# set -x DOCKER_HOST_IP 10.211.55.3
+set -x DOCKER_HOST_IP localhost
+set -x DOCKER_HOST "tcp://$DOCKER_HOST_IP:2375"
+# set -x DOCKER_HOST tcp://(boot2docker ip 2>/dev/null):2376
+
+# New version with docker-machine & docker-compose
+#set -x DOCKER_HOST tcp://(docker-machine ip (docker-machine active)):2375
+#set -x DOCKER_CERT_PATH $HOME/.docker/machines/(docker-machine active)
+#set -x DOCKER_TLS_VERIFY 1
+
+# Fig
+# alias fu="fig up"
+# alias fr="fig run --rm"
+# alias frw="fig run --rm web"
+# alias frwr="fig run --rm web bundle exec"
+# alias fs="fig stop"
+# alias fsr="fig stop; fig rm"
+
+# Docker
+alias do="docker"
+alias de="docker exec -it"
+
+# Machine
+alias dm="docker-machine"
+
+# Compose
+alias dcc="docker-compose"
+alias dcu="docker-compose up"
+alias dcs="docker-compose stop"

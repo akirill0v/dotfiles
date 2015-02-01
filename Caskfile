@@ -17,3 +17,4 @@ cask install spotifree 2> /dev/null
 cask install vagrant 2> /dev/null
 cask install slack 2> /dev/null
 cask install heroku-toolbelt 2> /dev/null
+cask install lastpass-universal 2> /dev/null
