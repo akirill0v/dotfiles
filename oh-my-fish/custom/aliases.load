@@ -40,3 +40,6 @@ alias em="emacsclient -t"
 
 # Vim
 alias vim='mvim -v'
+
+# Emacs
+alias e='emacs'

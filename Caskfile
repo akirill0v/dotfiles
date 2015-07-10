@@ -1,20 +1,17 @@
 # Install native apps
 # Usage: `brew bundle Caskfile`
 
-install caskroom/cask/brew-cask
+# install caskroom/cask/brew-cask
 tap caskroom/versions
 
 cask install google-chrome 2> /dev/null
 cask install iterm2 2> /dev/null
 cask install macvim 2> /dev/null
 cask install transmission 2> /dev/null
-cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
 cask install skype 2> /dev/null
 cask install tunnelblick 2> /dev/null
 cask install spotify 2> /dev/null
-cask install spotifree 2> /dev/null
 cask install vagrant 2> /dev/null
-cask install slack 2> /dev/null
 cask install heroku-toolbelt 2> /dev/null
-cask install lastpass-universal 2> /dev/null
+cask install qlmarkdown 2> /dev/null

@@ -36,6 +36,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-git'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mattn/emmet-vim'
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -67,10 +68,14 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
+Plugin 'vim-scripts/paredit.vim'
 
 " Rust
 Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
+
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " End Plugins---------------------------------
@@ -105,10 +110,12 @@ let g:go_snippet_engine = "neosnippet"
 " Colorscheme
 " let g:hybrid_use_iTerm_colors = 1
 syntax enable
-"set background=light
+set background=light
 colorscheme github
-" colorscheme solarized
-"let g:solarized_termcolors=256
+"colorscheme solarized
+"colorscheme strange
+let g:solarized_termcolors=256
+"set background=dark
 " End Plugin Configs--------------------------
 
 filetype off
@@ -118,6 +125,7 @@ let mapleader=","
 set nocompatible
 
 set cursorline
+set cursorcolumn
 set hidden
 set expandtab
 "set modelines=0
@@ -152,7 +160,7 @@ map <C-h> <C-w><Left>
 
 nnoremap <leader>fef :normal! gg=G``<CR>
 
-nmap <C-\> :NERDTreeFind<CR>
+nmap <silent> <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader>e :NERDTreeToggle<CR>
 
 nmap <silent> // :nohlsearch<CR>
@@ -169,6 +177,7 @@ vmap <Leader>y :w! ~/.vbuf<CR>
 nmap <Leader>y :.w! ~/.vbuf<CR>
 " "paste the contents of the buffer file
 nmap <Leader>p :r ~/.vbuf<CR>
+nmap <Leader>w :w<CR>
 
 " save changes
 map <Leader>s :w<CR>
@@ -182,3 +191,19 @@ autocmd BufWritePre * :%s/\s\+$//e
 nnoremap <Leader><Space> :Goyo<CR>
 " Tagbar
 noremap <Leader><leader>t :TagbarToggle<CR>
+au FileType arc call PareditInitBuffer()
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn|bundle))|(node_modules)|(tmp)$',
+  \ 'file': '\v\.(log|lock)$',
+  \ }
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif

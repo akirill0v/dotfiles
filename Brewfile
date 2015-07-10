@@ -1,7 +1,5 @@
-install android-sdk
-install ansible
-install bazaar
 install caskroom/cask/brew-cask
+tap thoughtbot/formulae
 install curl
 install fish
 install gettext
@@ -11,9 +9,7 @@ install gnu-getopt
 install go
 install httpie
 install lua
-install mercurial
 install rcm
 install tmux
-install macvim
-install boot2docker
-install fig
+install the_silver_searcher
+cask Caskfile

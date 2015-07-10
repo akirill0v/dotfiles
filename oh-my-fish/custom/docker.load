@@ -1,13 +1,9 @@
 # Old version ???!!!
-# set -x DOCKER_HOST_IP 10.211.55.3
-set -x DOCKER_HOST_IP localhost
-set -x DOCKER_HOST "tcp://$DOCKER_HOST_IP:2375"
-# set -x DOCKER_HOST tcp://(boot2docker ip 2>/dev/null):2376
+#set -x DOCKER_HOST_IP localhost #10.211.55.3
+#set -x DOCKER_HOST "tcp://$DOCKER_HOST_IP:2375"
 
-# New version with docker-machine & docker-compose
-#set -x DOCKER_HOST tcp://(docker-machine ip (docker-machine active)):2375
-#set -x DOCKER_CERT_PATH $HOME/.docker/machines/(docker-machine active)
-#set -x DOCKER_TLS_VERIFY 1
+# Docker-Machine
+eval ( docker-machine env dev )\n
 
 # Fig
 # alias fu="fig up"
