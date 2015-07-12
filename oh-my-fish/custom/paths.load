@@ -4,4 +4,5 @@ set -x PATH $PATH /usr/local/bin
 set -x PATH $PATH $HOME/.gem/ruby/2.1.0/bin
 set -x PATH $PATH $HOME/.sdk/tools
 set -x PATH $PATH $HOME/.sdk/platform-tools
+set -x PATH $PATH /Applications/Parallels\ Desktop.app/Contents/MacOS/
 set -x EDITOR vim

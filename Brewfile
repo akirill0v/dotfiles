@@ -1,15 +1,30 @@
-install caskroom/cask/brew-cask
-tap thoughtbot/formulae
-install curl
-install fish
-install gettext
-install git
-install git-flow-avh
-install gnu-getopt
-install go
-install httpie
-install lua
-install rcm
-install tmux
-install the_silver_searcher
-cask Caskfile
+tap "thoughtbot/formulae"
+tap "railwaycat/emacsmacport"
+
+brew "caskroom/cask/brew-cask"
+brew "curl"
+brew "fish"
+brew "gettext"
+brew "git"
+brew "git-flow-avh"
+brew "gnu-getopt"
+brew "go"
+brew "httpie"
+brew "lua"
+brew "rcm"
+brew "tmux"
+brew "the_silver_searcher"
+brew "emacs-mac"
+brew "docker"
+brew "docker-compose"
+
+cask "iterm2"
+cask "transmission"
+cask "vlc"
+cask "skype"
+cask "tunnelblick"
+cask "qlmarkdown"
+cask "emacs"
+cask "firefox"
+cask "slack"
+
