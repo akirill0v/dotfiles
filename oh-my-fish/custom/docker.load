@@ -1,5 +1,5 @@
 # Old version ???!!!
-#set -x DOCKER_HOST_IP localhost #10.211.55.3
+#set -x DOCKER_HOST_IP 192.168.64.4
 #set -x DOCKER_HOST "tcp://$DOCKER_HOST_IP:2375"
 
 # Docker-Machine

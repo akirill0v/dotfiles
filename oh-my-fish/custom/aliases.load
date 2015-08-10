@@ -39,7 +39,8 @@ alias ap=ansible-playbook
 alias em="emacsclient -t"
 
 # Vim
-alias vim='mvim -v'
+# alias vim='mvim -v'
+alias vim='nvim'
 
 # Emacs
 alias e='emacs'

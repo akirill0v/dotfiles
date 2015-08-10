@@ -11,13 +11,15 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'nanotech/jellybeans.vim'
+Plugin '29decibel/codeschool-vim-theme'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 " You can specify revision/branch/tag.
-Plugin 'Shougo/vimshell', { 'rev' : '3787e5' }
+Plugin 'Shougo/vimshell'
 
 " Plugins-------------------------------------
 Plugin 'Shougo/unite.vim'
@@ -50,10 +52,10 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'chrisbra/csv.vim'
 Plugin 'dotcloud/docker', {'rtp': 'contrib/syntax/vim'}
 Plugin 'bling/vim-airline'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'endel/vim-github-colorscheme'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'endel/vim-github-colorscheme'
 
 Plugin 'bogado/file-line'
 Plugin 'Lokaltog/vim-easymotion'
@@ -62,7 +64,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-cucumber'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'henrik/vim-yaml-flattener'
+" Plugin 'henrik/vim-yaml-flattener'
 
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
@@ -86,35 +88,37 @@ filetype plugin indent on
 nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = "Dispatch rspec {spec}"
+"map <Leader>t :call RunCurrentSpecFile()<CR>
+"map <Leader>s :call RunNearestSpec()<CR>
+"map <Leader>l :call RunLastSpec()<CR>
+"map <Leader>a :call RunAllSpecs()<CR>
+"let g:rspec_command = "Dispatch rspec {spec}"
 
 " Go
-au BufRead,BufNewFile *.go set filetype=go
+"au BufRead,BufNewFile *.go set filetype=go
 
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-let g:go_snippet_engine = "neosnippet"
+"au FileType go nmap <Leader>i <Plug>(go-info)
+"au FileType go nmap <Leader>gd <Plug>(go-doc)
+"au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+"au FileType go nmap <leader>r <Plug>(go-run)
+"au FileType go nmap <leader>b <Plug>(go-build)
+"au FileType go nmap <leader>t <Plug>(go-test)
+"au FileType go nmap gd <Plug>(go-def)
+"au FileType go nmap <Leader>ds <Plug>(go-def-split)
+"au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+"au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+"let g:go_snippet_engine = "neosnippet"
 
 " Colorscheme
-" let g:hybrid_use_iTerm_colors = 1
+"let g:hybrid_use_iTerm_colors = 1
 syntax enable
-set background=light
-colorscheme github
+set t_Co=256
+"set background=dark
+colorscheme jellybeans
+"colorscheme github
 "colorscheme solarized
 "colorscheme strange
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 "set background=dark
 " End Plugin Configs--------------------------
 
@@ -186,6 +190,17 @@ vmap <Leader>s <ESC><ESC>:w<CR>
 
 " Automatically removing all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+"
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+au BufRead,BufNewFile {Vagrantfile,Gemfile,Capfile} set ft=ruby
+
+au FileType ruby setl sw=2 sts=2 et
+au FileType javascript setl sw=2 sts=2 et
+au FileType yaml setl sw=2 sts=2 et
 
 " Map Goyo toggle to <Leader> + spacebar
 nnoremap <Leader><Space> :Goyo<CR>
