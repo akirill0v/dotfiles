@@ -28,14 +28,15 @@
      ruby
      go
      html
-     javascript
+     (javascript :variables
+                 js2-basic-offset 2)
      erlang
+     haskell
      extra-langs
      sql
      ;; Configs
      dockerfile
      ;; Misc
-     trello
      auto-completion
      evil-commentary
      search-engine
@@ -45,6 +46,7 @@
      ;;        shell-default-position 'bottom)
      syntax-checking
      version-control
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -77,19 +79,20 @@ before layers configuration."
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed.
    dotspacemacs-startup-banner 'official
+   ;; dotspacemacs-startup-banner '000
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'."
    dotspacemacs-startup-lists '(recents projects)
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
+   dotspacemacs-themes '(zenburn
+                         monokai
                          solarized-light
                          solarized-dark
                          spacemacs-light
                          spacemacs-dark
-                         leuven
-                         zenburn)
+                         leuven)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
@@ -140,7 +143,7 @@ before layers configuration."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'.
@@ -169,6 +172,7 @@ before layers configuration."
    ;; specified with an installed package.
    ;; Not used for now.
    dotspacemacs-default-package-repository nil
+   ruby-enable-ruby-on-rails-support t
    )
   ;; User initialization goes here
   )
@@ -177,7 +181,62 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (add-to-list 'auto-mode-alist '("\\.trello" . org-mode)))
+  (add-to-list 'auto-mode-alist '("\\.trello" . org-mode))
+  (golden-ratio-mode 1)
+  (whitespace-mode 1)
+
+  ;; JSX in `web-mode'
+  (add-to-list 'auto-mode-alist '("\\.jsx" . web-mode))
+
+  ;; JS Indentation
+  (setq js-ident-level 2)
+
+  ;; START sexy syntax
+  ;; ===========
+
+  ;; Show 80-column marker
+  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  (global-fci-mode 1)
+
+  ;; Clojure
+  (setq clojure-enable-fancify-symbols t)
+  (add-hook 'clojure-mode-hook #'paredit-mode)
+
+  ;; ===============
+  ;; END sexy syntax
+
+  ;; Whitespace & wrapping
+  (setq-default truncate-lines t)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+  ;; Indentation
+
+  ;; Highlighting
+  (add-hook 'after-init-hook #'crosshairs-mode)
+  (setq col-highlight-vline-face-flag  t
+        col-highlight-face             hl-line-face))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ahs-case-fold-search nil t)
+ '(ahs-default-range (quote ahs-range-whole-buffer) t)
+ '(ahs-idle-interval 0.25 t)
+ '(ahs-idle-timer 0 t)
+ '(ahs-inhibit-face-list nil t)
+ '(js-indent-level 2)
+ '(package-selected-packages
+   (quote
+    (wolfram-mode window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe toc-org tagedit stan-mode sql-indent spray spacemacs-theme smooth-scrolling smeargle slim-mode shm shell-pop scss-mode scad-mode sass-mode ruby-tools ruby-test-mode robe rainbow-delimiters qml-mode powerline popwin pcre2el paradox page-break-lines org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode matlab-mode markdown-toc markdown-mode magit-gitflow magit macrostep linum-relative leuven-theme less-css-mode julia-mode json-mode js2-refactor js2-mode js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-descbinds helm-css-scss helm-c-yasnippet helm-ag helm haskell-snippets haml-mode google-translate golden-ratio go-eldoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-commit gh-md flycheck-pos-tip flycheck-haskell flycheck flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-commentary evil-args evil-anzu eshell-prompt-extras esh-help erlang enh-ruby-mode engine-mode emmet-mode elisp-slime-nav dockerfile-mode diff-hl define-word company-web company-tern company-statistics company-quickhelp company-go company-ghc company-cabal company coffee-mode cmm-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu cider bundler buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary arduino-mode align-cljlet aggressive-indent adaptive-wrap ace-window ace-link ac-ispell evil-leader evil which-key quelpa package-build use-package bind-key s dash monokai-theme)))
+ '(ring-bell-function (quote ignore)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

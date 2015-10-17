@@ -1,9 +1,9 @@
 # Old version ???!!!
-#set -x DOCKER_HOST_IP 192.168.64.4
-#set -x DOCKER_HOST "tcp://$DOCKER_HOST_IP:2375"
+set -x DOCKER_HOST_IP 192.168.64.2
+set -x DOCKER_HOST "tcp://$DOCKER_HOST_IP:2375"
 
 # Docker-Machine
-eval ( docker-machine env dev )\n
+# eval ( docker-machine env dev )\n
 
 # Fig
 # alias fu="fig up"
