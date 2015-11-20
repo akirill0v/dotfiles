@@ -31,6 +31,7 @@
      (javascript :variables
                  js2-basic-offset 2)
      erlang
+     elixir
      haskell
      extra-langs
      sql
@@ -215,6 +216,9 @@ layers configuration."
   (add-hook 'after-init-hook #'crosshairs-mode)
   (setq col-highlight-vline-face-flag  t
         col-highlight-face             hl-line-face))
+
+  ;; Change default emacs directory
+  (setq default-directory (concat (getenv "HOME") "/" "projects"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
