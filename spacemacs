@@ -22,6 +22,7 @@
      ;; Languages
      emacs-lisp
      clojure
+     racket
      git
      markdown
      org
@@ -130,7 +131,7 @@ before layers configuration."
    dotspacemacs-enable-paste-micro-state nil
    ;; Guide-key delay in seconds. The Guide-key is the popup buffer listing
    ;; the commands bound to the current keystrokes.
-   dotspacemacs-guide-key-delay 0.4
+   dotspacemacs-guide-key-delay 0.5
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil ;; to boost the loading time.
@@ -182,7 +183,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-  (add-to-list 'auto-mode-alist '("\\.trello" . org-mode))
+  ;; (add-to-list 'auto-mode-alist '("\\.trello" . org-mode))
   (golden-ratio-mode 1)
   (whitespace-mode 1)
 
@@ -235,7 +236,7 @@ layers configuration."
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (wolfram-mode window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe toc-org tagedit stan-mode sql-indent spray spacemacs-theme smooth-scrolling smeargle slim-mode shm shell-pop scss-mode scad-mode sass-mode ruby-tools ruby-test-mode robe rainbow-delimiters qml-mode powerline popwin pcre2el paradox page-break-lines org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode matlab-mode markdown-toc markdown-mode magit-gitflow magit macrostep linum-relative leuven-theme less-css-mode julia-mode json-mode js2-refactor js2-mode js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-descbinds helm-css-scss helm-c-yasnippet helm-ag helm haskell-snippets haml-mode google-translate golden-ratio go-eldoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-commit gh-md flycheck-pos-tip flycheck-haskell flycheck flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-commentary evil-args evil-anzu eshell-prompt-extras esh-help erlang enh-ruby-mode engine-mode emmet-mode elisp-slime-nav dockerfile-mode diff-hl define-word company-web company-tern company-statistics company-quickhelp company-go company-ghc company-cabal company coffee-mode cmm-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu cider bundler buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary arduino-mode align-cljlet aggressive-indent adaptive-wrap ace-window ace-link ac-ispell evil-leader evil which-key quelpa package-build use-package bind-key s dash monokai-theme)))
+    (wolfram-mode window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe toc-org tagedit stan-mode sql-indent spray spacemacs-theme smooth-scrolling smeargle slim-mode shm shell-pop scss-mode scad-mode sass-mode ruby-tools ruby-test-mode robe rainbow-delimiters qml-mode powerline popwin pcre2el paradox page-break-lines org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode matlab-mode markdown-toc markdown-mode magit-gitflow magit macrostep linum-relative leuven-theme less-css-mode julia-mode json-mode js2-refactor js2-mode js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize hindent highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-descbinds helm-css-scss helm-c-yasnippet helm-ag helm haskell-snippets haml-mode google-translate golden-ratio go-eldoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-commit gh-md flycheck-pos-tip flycheck-haskell flycheck flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-matchit evil-lisp-state evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-commentary evil-args evil-anzu eshell-prompt-extras esh-help erlang enh-ruby-mode engine-mode emmet-mode elisp-slime-nav dockerfile-mode diff-hl define-word company-web company-tern company-statistics company-quickhelp company-go company-ghc company-cabal company coffee-mode cmm-mode clj-refactor clean-aindent-mode cider-eval-sexp-fu cider bundler buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary arduino-mode align-cljlet aggressive-indent adaptive-wrap ace-window ace-link ac-ispell evil-leader evil which-key quelpa package-build use-package bind-key s dash monokai-theme multi-term)))
  '(ring-bell-function (quote ignore)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

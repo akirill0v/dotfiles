@@ -26,3 +26,7 @@
 	helper = osxkeychain
 [core]
   ;editor = emacsclient -t -a=\\\"\\\"
+[github]
+	user = saratovsource
+	password = pkS25gU7gUHn
+	oauth-token = 66eb1172149494912c5d818a4070e1666ad2b331
